@@ -1,0 +1,5 @@
+name: "namespace"
+version: "0.1.0"
+usage: "autocreate namespace if it doesn't exist for Helm v3"
+description: "autocreate namespace if it doesn't exist for Helm v3 to restore Helm v2-like behavior for those who want it"
+command: "$HELM_PLUGIN_DIR/namespace.sh"
