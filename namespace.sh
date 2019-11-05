@@ -16,11 +16,14 @@ if [ -n "$dryRun" ]; then
     echo "DRY-RUN: no operations will really be performed"
 else
 
+context=""
+[ -n "${HELM_KUBECONTEXT}" ] && context="--context $HELM_KUBECONTEXT"
+
 echo "apiVersion: v1
 kind: Namespace
 metadata:
   name: ${HELM_NAMESPACE}
-" | kubectl apply -f -
+" | kubectl $context apply -f -
 
 fi
 
